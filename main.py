@@ -12,7 +12,7 @@ from functools import wraps
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "sqlite:///blog.db")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False, use_ssl=False, base_url=None)
